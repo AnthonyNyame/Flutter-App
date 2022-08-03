@@ -12,20 +12,22 @@ buildscript {
 }
 
 plugins {
-    id("maven-publish")
-    id("java")
+    id("java-library")                          
+    id("maven-publish")                                
 }
 
-version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+
+version '1.0.0'
 
 publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/anthonynyame/Flutter-App")
+            url = uri("https://maven.pkg.github.com/anthonynyame/flutter-app")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
@@ -50,3 +52,7 @@ subprojects {
 subprojects {
     project.evaluationDependsOn(':app')
 }
+
+// dependencies {
+//     compile 'com.example:package:version'
+// }
