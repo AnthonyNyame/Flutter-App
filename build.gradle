@@ -74,5 +74,5 @@ subprojects {
 }
 
 dependencies {
-    compile 'com.testgroup:test:1.0.0'
+    implementation 'com.testgroup:test:1.0.0'
 }
