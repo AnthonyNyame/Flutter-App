@@ -24,6 +24,9 @@ version '1.0.0'
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://maven.pkg.github.com/anthonynyame/Flutter-App"
+    }
 }
 
 // Configures the publishing
@@ -45,7 +48,6 @@ publishing {
     publications {
         gpr(MavenPublication) {
             artifactId='test'
-            artifact "$buildDir/app/outputs/apk/debug/*.apk"
             from(components.java)
         }
     }
