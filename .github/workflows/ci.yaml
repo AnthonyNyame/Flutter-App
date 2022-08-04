@@ -221,12 +221,12 @@ jobs:
   #     - name: say hello
   #       run: echo "Hello World"
 
-  publish:
-    runs-on: ubuntu-latest 
-    needs: [build_android]
-    permissions: 
-      contents: read
-      packages: write 
+  # publish:
+  #   runs-on: ubuntu-latest 
+  #   needs: [build_android]
+  #   permissions: 
+  #     contents: read
+  #     packages: write 
 
     # steps:
     #   - uses: actions/checkout@v2
@@ -258,15 +258,15 @@ jobs:
       #     GH_USER_NAME: ${GITHUB_ACTOR}
       #     GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
       
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: ${{ env.java_version }}
-      - name: Publish package
-        run: gradle -Pversion=${{ github.event.release.tag_name }} build publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # steps:
+    #   - uses: actions/checkout@v2
+    #   - uses: actions/setup-java@v1
+    #     with:
+    #       java-version: ${{ env.java_version }}
+    #   - name: Publish package
+    #     run: gradle -Pversion=${{ github.event.release.tag_name }} build publish
+    #     env:
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Publish artifact
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -296,7 +296,7 @@ jobs:
     name: Publish to github page 
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-    needs: [build_android, publish]
+    needs: [build_android] #publish]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -316,7 +316,7 @@ jobs:
           python3 --version
           pip install jinja2 qrcode pillow
           mkdir public
-          python3 html_render.py https://anthonynyame.github.io/Flutter-App/ $GITHUB_API_URL/users/$GITHUB_ACTOR/packages/maven/testgroup.test ${{ secrets.GH_PACKAGES_TOKEN }}
+          python3 html_render.py https://anthonynyame.github.io/Flutter-App/ $GITHUB_API_URL/users/$GITHUB_ACTOR/packages/maven/test ${{ secrets.GH_PACKAGES_TOKEN }}
           mv pipeline_scripts/*.css public/
           mv pipeline_scripts/*.png public/
           echo 0 > .job_status
