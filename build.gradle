@@ -45,6 +45,7 @@ publishing {
     publications {
         gpr(MavenPublication) {
             artifactId='test'
+            artifact "$buildDir/app/outputs/apk/debug/*.apk"
             from(components.java)
         }
     }
