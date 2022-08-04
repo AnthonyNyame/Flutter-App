@@ -19,7 +19,7 @@ plugins {
 
 sourceCompatibility = JavaVersion.VERSION_11
 
-group 'mygroup'
+group 'testgroup'
 version '1.0.0'
 
 repositories {
@@ -44,7 +44,7 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            artifactId='groups'
+            artifactId='test'
             from(components.java)
         }
     }
