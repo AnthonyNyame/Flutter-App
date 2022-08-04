@@ -306,7 +306,7 @@ jobs:
           python3 --version
           pip install jinja2 qrcode pillow
           mkdir public
-          python3 html_render.py https://anthonynyame.github.io/Flutter-App/ $GITHUB_API_URL/users/$GITHUB_REPOSITORY_OWNER/packages/maven/testmygroup ${{ GH_PACKAGES_TOKEN }}
+          python3 html_render.py https://anthonynyame.github.io/Flutter-App/ $GITHUB_API_URL/users/$GITHUB_REPOSITORY_OWNER/packages/maven/testmygroup ${{ env.GH_PACKAGES_TOKEN }}
           mv pipeline_scripts/*.css public/
           mv pipeline_scripts/*.png public/
           echo 0 > .job_status
