@@ -44,7 +44,7 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            artifactId='mygroup'
+            artifactId='groups'
             from(components.java)
         }
     }
