@@ -305,7 +305,7 @@ jobs:
       - name: Publish with python 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ GITHUB_ACTOR }}
+          GH_PACKAGES_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
         run: |
           mv pipeline_scripts/*.py pipeline_scripts/*.jinja2 pipeline_scripts/*.sh .
           python3 --version
