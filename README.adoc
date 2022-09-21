@@ -19,3 +19,8 @@ The next stage is the build stage, this is where the Android and iOS packages ar
 The packages are then stored as artefacts in the pipeline, then registered in GitHub packages. After this, a version tag is attached to the most recent changes and released to GitHub releases. Both the Android and iOS packages are also available here.
 
 Once the packages have been created, they are then deployed to the deployment platforms using Fastlane and Firebase. Here they can be further tested, before being pushed into the Google Playstore and Apple Appstore.
+
+== Tools:
+There are a few tools required to assist with the various stages of the Flutter CI/CD pipeline. 
+
+include::docs/tools/github.adoc[]
