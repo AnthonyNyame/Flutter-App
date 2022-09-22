@@ -1,0 +1,9 @@
+=== Environment setup (MacOS)
+
+It is recommended on MacOS to use a dependency management tool called "brew", as such install the following;
+
+- Install brew on your system, setup instructions can be https://brew.sh[found here].
+- Docker, including docker compose, setup instructions can be https://docs.docker.com/desktop/mac/install/[found here]. Note Docker Desktop now requires a license, an alternative option is to install https://docs.docker.com/engine/install/[Docker Engine].
+- Setup developer tools for; https://git-scm.com[Git] and https://nodejs.org[Node] (we recommed using the current LTS), you can do this using brew with `brew install git node@14`
+
+Once all of these are installed, you're good to go setting up saleor and strapi locally. The local version will generally be pre-seeded with demo data and interactable, as long as it is started on the correct port.

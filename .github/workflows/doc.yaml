@@ -14,21 +14,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
 
       - name: Build PDF
         uses: avattathil/asciidoctor-action@master
         with:
           program: "asciidoctor-pdf -a allow-uri-read -D . README.adoc"
 
-      - name: bump verion
-        id: bump
-        uses: zwaldowski/match-label-action@v1
+      - name: Version
+        id: version
+        uses: paulhatch/semantic-version@v4.0.2
         with:
-          allowed: major
-      - uses: zwaldowski/semver-release-action@v1
-        with:
-          bump: ${{ steps.bump.outputs.match }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: "v"
+          major_pattern: "(MAJOR)"
+          minor_pattern: "(MINOR)"
+          change_path: "docs/**"
+          namespace: documentaion
 
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v2

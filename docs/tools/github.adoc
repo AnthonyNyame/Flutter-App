@@ -4,7 +4,7 @@ GitHub is a cloud hosted platform to manage software projects, long established 
 
 To access GitHub simply goto https://github.com. You can signup for a free account, and if you already have an account you can associate multiple email addresses to your account. Once registered you will need to be invited to the organisation by an administrator, how will also need to allocate you to the required project(s).
 
-Some tips for using GitHub;
+Some tips for using GitHub:
 
 1. Add https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication[two factor authentication] to protect your account.
 2. Make sure to https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent[setup SSH keys] so you can push and pull changes with minimal intervention.
